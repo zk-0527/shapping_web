@@ -1,14 +1,5 @@
 package com.zk.pojo;
 
-/**
- * Created with IntelliJ IDEA.
- *
- * @ProjectName: Java_web_sun
- * @ClassName: Goods
- * @author: ${周康}
- * @description:
- * @data: 2021/11/19 22:16 PM
- */
 public class Goods {
     private String goodsname;
     private String goodsprice;

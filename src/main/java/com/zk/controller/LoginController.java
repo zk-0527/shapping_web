@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import redis.clients.jedis.Jedis;
 
 import javax.annotation.Resource;
 import javax.imageio.ImageIO;
@@ -38,7 +39,8 @@ public class LoginController {
 @Resource
 private LoginServiceImpl service;
 
-
+@Resource
+private Jedis getJedisUser;
 
     @RequestMapping(value = "/login.do",method = RequestMethod.POST)
     public ModelAndView LoginInfo(@RequestParam("user") String number, String password,HttpServletRequest request){
@@ -46,17 +48,25 @@ private LoginServiceImpl service;
         Map<String,String> map=new HashMap<>();
         map.put("username",number);
         map.put("password",password);
-        List<User1> users = service.LoginInfo(map);
 
-        if (users.size()<1){
-            mv.addObject("loginerr","账号密码错误，请重新输入！");
-            mv.setViewName("login");
-            System.out.println(1);
-            return mv;
+        //从redis数据库中取出密码
+        if (getJedisUser.get(number)!=null){
+            //此时证明redis数据库中有用户的账号信息，直接返回即可
+            request.getSession().setAttribute("loginName",number);
+            mv.setViewName("loginsucess");
+        }else {
+            //redis数据库中没有用户信息的话，就进入mysql数据库中进行查找
+            List<User1> users = service.LoginInfo(map);
+            if (users.size()<1){
+                mv.addObject("loginerr","账号密码错误，请重新输入！");
+                mv.setViewName("login");
+                System.out.println(1);
+                return mv;
+            }
         }
+
         request.getSession().setAttribute("loginName",number);
         mv.setViewName("loginsucess");
-        System.out.println(users);
         return mv;
     }
 
@@ -71,6 +81,8 @@ private LoginServiceImpl service;
         }
         return  msg;
     }
+
+
 
     //发送验证嘛图片给客户端
    @RequestMapping(value = "/getyanzm.do",method = RequestMethod.GET)

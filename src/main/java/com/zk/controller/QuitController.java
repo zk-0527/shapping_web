@@ -7,15 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 
-/**
- * Created with IntelliJ IDEA.
- *
- * @ProjectName: Java_web_sun
- * @ClassName: QuitController
- * @author: ${周康}
- * @description:
- * @data: 2021/11/20 14:55 PM
- */
+
 //处理退出请求  清除session中的用户名信息 跳转至登录页面
 @Controller
 public class QuitController {

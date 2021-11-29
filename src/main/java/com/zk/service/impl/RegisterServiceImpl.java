@@ -7,15 +7,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
-/**
- * Created with IntelliJ IDEA.
- *
- * @ProjectName: Java_web_sun
- * @ClassName: RegisterServiceImpl
- * @author: ${周康}
- * @description:
- * @data: 2021/11/19 17:50 PM
- */
+
 @Service
 public class RegisterServiceImpl implements RegisterService {
 

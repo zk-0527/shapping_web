@@ -9,15 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 
-/**
- * Created with IntelliJ IDEA.
- *
- * @ProjectName: Java_web_sun
- * @ClassName: RegisterController
- * @author: ${周康}
- * @description:
- * @data: 2021/11/19 17:44 PM
- */
 //负责处理注册页面的请求
 @Controller
 public class RegisterController {

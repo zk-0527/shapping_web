@@ -5,15 +5,7 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA.
- *
- * @ProjectName: Java_web_sun
- * @ClassName: GoodsDao
- * @author: ${周康}
- * @description:
- * @data: 2021/11/19 22:18 PM
- */
+
 public interface GoodsDao {
 
     //查询商品信息

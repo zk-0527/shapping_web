@@ -1,14 +1,6 @@
 package com.zk.pojo;
 
-/**
- * Created with IntelliJ IDEA.
- *
- * @ProjectName: Java_web_sun
- * @ClassName: User
- * @author: ${周康}
- * @description:
- * @data: 2021/11/19 17:46 PM
- */
+
 public class User1 {
     private String username;
     private String pwd;

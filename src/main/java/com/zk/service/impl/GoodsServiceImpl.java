@@ -8,15 +8,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA.
- *
- * @ProjectName: Java_web_sun
- * @ClassName: GoodsServiceImpl
- * @author: ${周康}
- * @description:
- * @data: 2021/11/19 22:24 PM
- */
+
 @Service
 public class GoodsServiceImpl implements GoodsService {
 

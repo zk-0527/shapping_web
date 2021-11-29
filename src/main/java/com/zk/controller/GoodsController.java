@@ -14,15 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.security.PublicKey;
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA.
- *
- * @ProjectName: Java_web_sun
- * @ClassName: GoodsController
- * @author: ${周康}
- * @description:
- * @data: 2021/11/19 22:15 PM
- */
 //查询商品信息
 @Controller
 public class GoodsController {
